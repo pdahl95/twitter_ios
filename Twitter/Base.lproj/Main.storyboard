@@ -40,7 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="6uZ-6B-UXE"/>
                     </view>
                     <connections>
-                        <segue destination="APu-21-ruo" kind="presentation" identifier="LoginToHome" id="RvK-Jw-CkK"/>
+                        <segue destination="APu-21-ruo" kind="presentation" identifier="LoginToHome" modalPresentationStyle="fullScreen" id="RvK-Jw-CkK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6Z-vg-SVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -52,7 +52,7 @@
             <objects>
                 <tableViewController title="Home" id="WAj-o2-lYj" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hjk-QX-D6K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -126,7 +126,7 @@
                 <navigationController id="APu-21-ruo" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="lvR-Tt-rUd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OOw-Cs-73F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
