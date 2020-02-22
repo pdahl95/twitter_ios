@@ -19,9 +19,14 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweets()
+//        loadTweets()
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
     }
     
     @objc func loadTweets(){
@@ -32,7 +37,7 @@ class HomeTableViewController: UITableViewController {
         let myParams = ["count": numOfTweets]
         
         // calling the API
-        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets:[NSDictionary]) in
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams as [String : Any], success: { (tweets:[NSDictionary]) in
             
             self.tweetArray.removeAll()
             for tweet in tweets {
@@ -56,7 +61,7 @@ class HomeTableViewController: UITableViewController {
         numOfTweets = numOfTweets + 20
         let myParams = ["count": numOfTweets]
         
-        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets:[NSDictionary]) in
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams as [String : Any], success: { (tweets:[NSDictionary]) in
             
             self.tweetArray.removeAll()
             for tweet in tweets {
@@ -78,15 +83,7 @@ class HomeTableViewController: UITableViewController {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-        
+
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
