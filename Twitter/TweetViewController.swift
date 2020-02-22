@@ -8,19 +8,31 @@
 
 import UIKit
 
-class TweetViewController: UIViewController {
+class TweetViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tweetTextView: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tweetTextView.becomeFirstResponder()
-
+        tweetTextView.text = "What's happening?"
+        tweetTextView.textColor = UIColor.lightGray
+        tweetTextView.delegate = self
+//        tweetTextView.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
     
+    func tapTextView(sender: UITapGestureRecognizer){
+        tweetTextView.becomeFirstResponder()
+    }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if tweetTextView.textColor == UIColor.lightGray {
+            tweetTextView.text = nil
+            tweetTextView.textColor = UIColor.black
+        }
+    }
+
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)

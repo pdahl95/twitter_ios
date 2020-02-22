@@ -19,7 +19,7 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadTweets()
+        numOfTweets = 20
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
     }
@@ -31,7 +31,7 @@ class HomeTableViewController: UITableViewController {
     
     @objc func loadTweets(){
         
-        numOfTweets = 20
+//        numOfTweets = 20
         
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": numOfTweets]
