@@ -16,7 +16,7 @@ class HomeTableViewController: UITableViewController {
     
     let myRefreshControl = UIRefreshControl()
 
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         numOfTweets = 20
@@ -31,6 +31,8 @@ class HomeTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         self.loadTweets()
     }
+    
+    
     
     @objc func loadTweets(){
         
