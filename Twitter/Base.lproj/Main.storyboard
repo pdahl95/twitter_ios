@@ -172,11 +172,24 @@
                                     <outlet property="delegate" destination="vCp-DJ-iGe" id="PCx-Xa-esy"/>
                                 </connections>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIY-aI-tNg">
+                                <rect key="frame" x="265" y="297" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="b49-Kb-2Wt"/>
+                                    <constraint firstAttribute="height" constant="40" id="u2q-9N-A6r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mgX-CY-nt5" firstAttribute="top" secondItem="jTa-Bf-ooy" secondAttribute="top" id="6pV-Qy-C1X"/>
+                            <constraint firstItem="jTa-Bf-ooy" firstAttribute="trailing" secondItem="gIY-aI-tNg" secondAttribute="trailing" constant="10" id="Drz-BZ-7Pp"/>
                             <constraint firstItem="mgX-CY-nt5" firstAttribute="leading" secondItem="jTa-Bf-ooy" secondAttribute="leading" id="Hc6-7p-nlh"/>
+                            <constraint firstItem="jTa-Bf-ooy" firstAttribute="bottom" secondItem="gIY-aI-tNg" secondAttribute="bottom" constant="310" id="dzt-DW-qxw"/>
+                            <constraint firstItem="jTa-Bf-ooy" firstAttribute="trailing" secondItem="gIY-aI-tNg" secondAttribute="trailing" constant="10" id="izU-o5-nSN"/>
                             <constraint firstItem="jTa-Bf-ooy" firstAttribute="bottom" secondItem="mgX-CY-nt5" secondAttribute="bottom" id="oNc-yQ-NxJ"/>
                             <constraint firstItem="jTa-Bf-ooy" firstAttribute="trailing" secondItem="mgX-CY-nt5" secondAttribute="trailing" id="pnW-p8-ra2"/>
                         </constraints>
@@ -197,6 +210,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="charLabel" destination="gIY-aI-tNg" id="hO8-Ih-lNI"/>
                         <outlet property="tweetTextView" destination="mgX-CY-nt5" id="TpF-Op-amp"/>
                     </connections>
                 </viewController>
