@@ -13,13 +13,55 @@ class TweetViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var charLabel: UILabel!
     
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    var tweetArray = [NSDictionary]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tweetTextView.text = "What's happening?"
         tweetTextView.textColor = UIColor.lightGray
         tweetTextView.delegate = self
+
+        tweetTextView.layer.borderWidth = 2
+        tweetTextView.layer.borderColor = UIColor.lightGray.cgColor
+        tweetTextView.layer.cornerRadius = 25
+        tweetTextView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5);
+        
+        profileImage.layer.cornerRadius = self.profileImage.frame.width/2.0
+        profileImage.clipsToBounds = true
+        
         
     }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
+        
+        let user = tweetArray[indexPath.row]["user"] as! NSDictionary
+        
+//        cell.usernameLabel.text = user["name"] as? String
+//        cell.tweetLabel.text = tweetArray[indexPath.row]["text"] as? String
+        
+        
+        let imageUrl = URL(string: ((user["profile_image_url_https"] as? String)!))
+        let data = try? Data(contentsOf: imageUrl!)
+        
+        if let imageData = data {
+            cell.profileImageView.image = UIImage(data: imageData)
+        }
+        
+        
+//        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+//        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+//        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
+        
+        
+        return cell
+    }
+    
+    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
           let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
@@ -60,6 +102,8 @@ class TweetViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         
     }
     
+    
+
     
     /*
     // MARK: - Navigation

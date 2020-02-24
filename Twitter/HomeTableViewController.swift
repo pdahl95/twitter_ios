@@ -10,7 +10,6 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     
-    
     var tweetArray = [NSDictionary]() // empty dictionary
     var numOfTweets: Int!
     
@@ -100,6 +99,7 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         
+    
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
         
         cell.usernameLabel.text = user["name"] as? String

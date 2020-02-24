@@ -17,11 +17,12 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var favortieButton: UIButton!
     @IBOutlet weak var reTweetButton: UIButton!
     
+  
     @IBOutlet weak var tweetCount: UILabel!
     @IBOutlet weak var favorCount: UILabel!
     
-    var favorCounter:Int? = 0
-    var tweetCounter:Int? = 0
+    var favorCounter:Int? = nil
+    var tweetCounter:Int? = nil
         
     var favorited:Bool = false
     var tweetId:Int = -1
@@ -31,18 +32,18 @@ class TweetCell: UITableViewCell {
         favorited = isFavorited
         if favorited {
             favortieButton.setImage(UIImage(named: "favor-icon-red"), for: UIControl.State.normal)
-//            favorCounter = 0
-//            if(favorCounter! > 0){
-//                favorCounter! += 1
-//                tweetCount.text = String(format: "%d " ,self.favorCounter!)
-//            }
+            favorCounter = 0
+            if(favorCounter! > 0){
+                favorCounter! += 1
+                tweetCount.text = String(format: "%d " ,self.favorCounter!)
+            }
         }else{
             favortieButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
-//            favorCounter = 0
-//            if(favorCounter! > 0){
-//                favorCounter! -= 1
-//                tweetCount.text = String(format: "%d " ,self.favorCounter!)
-//            }
+            favorCounter = 0
+            if(favorCounter! > 0){
+                favorCounter! -= 1
+                tweetCount.text = String(format: "%d " ,self.favorCounter!)
+            }
         }
     }
     
