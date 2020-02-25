@@ -168,7 +168,7 @@
                                 <action selector="onLogout:" destination="WAj-o2-lYj" id="Ucc-fw-Hek"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="QBG-gv-nHl">
+                        <barButtonItem key="rightBarButtonItem" image="edit-icon" id="QBG-gv-nHl">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="ZYK-HW-RIG" kind="presentation" id="nWf-X7-fzr"/>
@@ -236,7 +236,7 @@
                         <viewLayoutGuide key="safeArea" id="jTa-Bf-ooy"/>
                     </view>
                     <navigationItem key="navigationItem" id="mXs-1Y-Cnf">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="V3S-xn-Bwh">
+                        <barButtonItem key="leftBarButtonItem" image="close-icon" id="V3S-xn-Bwh">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancel:" destination="vCp-DJ-iGe" id="eNa-ca-Wyg"/>
@@ -304,6 +304,8 @@
     </scenes>
     <resources>
         <image name="account-icon" width="30" height="25"/>
+        <image name="close-icon" width="26" height="24"/>
+        <image name="edit-icon" width="30" height="27"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
     </resources>
